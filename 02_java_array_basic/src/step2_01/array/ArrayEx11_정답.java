@@ -1,5 +1,6 @@
 package step2_01.array;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /*
@@ -29,6 +30,26 @@ public class ArrayEx11_정답 {
 		
 		boolean[] check = new boolean[5];
 		int[] arr   = new int[5];
+		Boolean isRun = true;
+		
+		int i = 0;
+		
+		while (i<5) {
+			int ranNum = ran.nextInt(5); 
+
+			// 해당 숫자가 없는 경우
+			if (check[ranNum] == false) {
+				check[ranNum] = true;
+				arr[i] = ranNum;
+				i++;
+			}
+			// 해당 숫자가 있는 경우
+			else continue;
+		}
+
+		System.out.println(Arrays.toString(check));
+		System.out.println(Arrays.toString(arr));
+
 					
 	}
 	
