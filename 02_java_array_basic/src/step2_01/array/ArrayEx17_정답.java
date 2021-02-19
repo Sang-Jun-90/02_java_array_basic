@@ -1,5 +1,7 @@
 package step2_01.array;
 
+import java.util.Scanner;
+
 /* 
  * # 틱택토
  * 
@@ -24,7 +26,80 @@ public class ArrayEx17_정답 {
 
 	public static void main(String[] args) {
 		
-		int[] game = new int[9];
+		Scanner scan = new Scanner(System.in);
+		
+		int[] game = new int[9]; /// 0 = [] , 1 = [O] , 2 = [X]
+		
+		Boolean isRun = true;
+		char turn = 'O';
+		
+		while (isRun) {
+			
+			System.out.print("=== 틱택토 ===");
+			System.out.println("");
+			for (int i = 0 ; i < 9 ; i ++) {
+				if (game[i] == 0) System.out.print("[ ]");	
+				else if (game[i] == 1) System.out.print("[O]");	
+				else if (game[i] == 2) System.out.print("[X]");	
+				if (i % 3 == 2) System.out.println("");		
+				
+			}
+			// 승리검수.
+			// 가로 .
+			for (int i = 0 ; i < 9 ; i += 3) {
+				if (game[i] * game[i+1]* game[i+2] == 1) {
+					System.out.print("P1 승리 ");
+					isRun = false;
+				}
+				if (game[i] * game[i+1]* game[i+2] == 8) {
+					System.out.print("P2 승리 ");
+					isRun = false;
+				}
+			}
+			// 세로
+			for (int i = 0 ; i < 3 ; i += 1) {
+				if (game[i] * game[i+3]* game[i+6] == 1) {
+					System.out.print("P1 승리 ");
+					isRun = false;
+				}
+				if (game[i] * game[i+3]* game[i+6] == 8) {
+					System.out.print("P2 승리 ");
+					isRun = false;
+				}
+			}
+			// 대각선
+			if (game[0] * game[4]* game[8] == 1) {
+				System.out.print("P1 승리 ");
+				isRun = false;
+			}
+			if (game[2] * game[4]* game[6] == 8) {
+				System.out.print("P2 승리 ");
+				isRun = false;
+			}
+			
+			
+			System.out.print("입력 : ");
+			int input = scan.nextInt();
+			
+			if (turn == 'O' && game[input] == 0) {
+				game[input] = 1;
+				turn = 'X';
+			}
+			else if (turn == 'X'&& game[input] == 0) {
+				game[input] = 2;
+				turn = 'O';
+			}
+			else if (game[input] != 0) {
+				System.out.println("이미 차있는칸 입니다.");
+				continue;
+			}
+			
+			
+			
+		}
+		
+		
+		
 		
 	}
 		

@@ -2,6 +2,7 @@ package step2_01.array;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /*
  * # 1 to 50[1단계] : 1 to 4
@@ -31,31 +32,47 @@ public class ArrayEx16_정답 {
 	public static void main(String[] args) {
 		
 		Random ran = new Random();
+		Scanner scan = new Scanner(System.in);
+		
+		Boolean isRun = true;
 		
 		int[] arr = new int[4];
 		boolean[] isCheck = new boolean[4];
 		
 		// 셔플
-		
-		Boolean isRun = true;
-		int temp = 0;  
-		
-		
-		while (isRun) {
-			int ranNum = ran.nextInt(4)+1;
-			int ranIndex = ran.nextInt(4);
-			
-			// 없는경우
-			
-			
-			// 이미 있는경우
-			
+		int cnt = 1;
+		while (cnt <= 4) {
+					
+			int ranNum = ran.nextInt(4);
+			// 빈경우
+			if (!isCheck[ranNum]) {
+				isCheck[ranNum] = true;
+				arr[ranNum] = cnt;
+				cnt++;
+			}
+
 		}
 		
+		int flag = 1;
 		
-		System.out.println(Arrays.toString(arr));
-		System.out.println(Arrays.toString(isCheck));
-
+		while (flag <= 5) {
+			
+			if (flag == 5) {		
+				System.out.print("성공");
+				break;
+			}
+			System.out.println(Arrays.toString(arr));
+			System.out.print("입력 : ");
+			int input = scan.nextInt();
+			
+			
+			if (arr[input] == flag) {
+				arr[input] = 9;
+				flag++;
+			}
+			else System.out.print("재입력하시오.");
+			
+		}
 		
 	}
 	
