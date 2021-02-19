@@ -28,38 +28,32 @@ public class ArrayEx12_정답 {
 //		System.out.print("인덱스 2 입력 : ");
 //		getIndex2 = scan.nextInt();
 //		
-//		getValue1 = arr[getIndex1];    // 20
-//		getValue2 = arr[getIndex2];    // 40
-//		
-//		arr[getIndex1] = getValue2;
-//		arr[getIndex2] = getValue1;
+//		temp = arr[getIndex1]; 
+//		arr[getIndex1] = arr[getIndex2];
+//		arr[getIndex2] = temp;
 //		
 //		System.out.println(Arrays.toString(arr));
-		
-
 		
 		// 문제 2) 값 2개를 입력받아 값 교체하기
 		// 예    2) 값1 입력 : 10
 		//        값2 입력 : 50
 		//		  {50, 20, 30, 40, 10}
 		
-//		System.out.print("인덱스 1 입력 : ");
-//		getValue1 = scan.nextInt();  // 10
-//		System.out.print("인덱스 2 입력 : ");
-//		getValue2 = scan.nextInt();  // 50
-//		
-//		
-//		
-//		for (int i = 0 ; i < arr.length ; i++) {
-//			if (getValue1 == arr[i]) {   // 10    i = 0
-//				arr[i] =  getValue2; // 50,20,30,40,50  
-//			}
-//			else if (getValue2 == arr[i]) {   // 50    i = 0 
-//				arr[i] =  getValue1; // 50,20,30,40,10  
-//			}
-//		}
-//
-//		System.out.println(Arrays.toString(arr));
+		System.out.print("인덱스 1 입력 : ");
+		getValue1 = scan.nextInt();  // 10
+		System.out.print("인덱스 2 입력 : ");
+		getValue2 = scan.nextInt();  // 50
+
+		for (int i = 0 ; i < arr.length ; i++) {
+			if (getValue1 == arr[i]) {   // 10    i = 0
+				arr[i] =  getValue2; // 50,20,30,40,50  
+			}
+			else if (getValue2 == arr[i]) {   // 50    i = 4 
+				arr[i] =  getValue1; // 50,20,30,40,10  
+			}
+		}
+
+		System.out.println(Arrays.toString(arr));
 		
 		
 		// 문제 3) 학번 2개를 입력받아 성적 교체하기

@@ -23,7 +23,7 @@ public class ArrayEx14_정답 {
 		
 		Boolean isRunning = true;
 		int[] game = {0, 0, 2, 0, 0, 0, 0};
-		int player = 0;   //    2
+		int player = 0;   
 		int temp = 0;
 		
 		// 플레이어의 위치 값 찾기
@@ -42,7 +42,7 @@ public class ArrayEx14_정답 {
 			if (input == 1) {
 				if (player <= 0 ) {
 					System.out.println("이미 끝에 도달했어요.");
-					break;
+					continue;
 				}
 				else {
 					game[player] = 0;
@@ -55,7 +55,7 @@ public class ArrayEx14_정답 {
 			else if (input == 2) {			
 				if (player >= 6 ) {
 					System.out.println("이미 끝에 도달했어요.");
-					break;
+					continue;
 				}
 				else {
 					game[player] = 0;

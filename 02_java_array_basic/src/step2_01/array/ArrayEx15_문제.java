@@ -35,13 +35,13 @@ public class ArrayEx15_문제 {
 		
 		int[] front = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
 		int[] back = new int[10];
-		int temp = 0;
-		int tempRan = 0;
+		int temp = 0;  //  1
+		int tempRan = 0;  // 9
 		int cnt  = 0;
 		
 		// 셔플 구현(Shuffle) : 배열의 요소들을 무작위로 섞음
 		while (cnt < 1000) {			
-			tempRan = ran.nextInt(9);
+			tempRan = ran.nextInt(10);
 			temp = front[0]; 
 			front[0] = front[tempRan];
 			front[tempRan] = temp;

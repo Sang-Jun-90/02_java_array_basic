@@ -34,22 +34,19 @@ public class ArrayEx10_정답 {
 			
 			// 1번 선택
 			if (sel == 1) {
-
 				Boolean getLotto = false;
+
 				for (int i = 0 ; i < lotto1.length-3 ; i++) {
 					int triple = lotto1[i]+lotto1[i+1]+lotto1[i+2];
-					if (triple == 21) {
-						getLotto = true;
-					}
+					if (triple == 21) getLotto = true;
 				}
 				if(getLotto) System.out.println("당첨");
 				else System.out.println("낙첨");
-//				
 			}
 			// 2번 선택
 			else if (sel == 2) {
 				Boolean getLotto = false;
-				for (int i = 0 ; i < lotto1.length-3 ; i++) {
+				for (int i = 0 ; i < lotto2.length-3 ; i++) {
 					int triple = lotto2[i]+lotto2[i+1]+lotto2[i+2];
 					if (triple == 21) {
 						getLotto = true;

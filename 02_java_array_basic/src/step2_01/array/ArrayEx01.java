@@ -31,10 +31,12 @@ public class ArrayEx01 {
 		// 2. 주소 변수 (주소저장)
 		int[] arr = null;
 		arr = new int[5];
+		// = int[] arr = new int[5]
+		
 		System.out.println(arr);    // 주소
 		
 		System.out.println(arr[0]);   // 배열은 생성시 초기값이 세팅되어 있다
-		System.out.println(arr[1]);   // 정수형태의 배열은 0, 나머지는 직접확인.
+		System.out.println(arr[1]);   // 정수형태의 배열은 0이 기본값 , 나머지는 직접확인.
 		System.out.println(arr[2]);   
 		System.out.println(arr[3]);   
 		System.out.println(arr[4]);   
@@ -60,8 +62,6 @@ public class ArrayEx01 {
 		System.out.println(Arrays.toString(arr));
 		
 		arr = null; // 배열 전체를 삭제
-		
-		
 		
 	}
 

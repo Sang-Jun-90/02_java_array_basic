@@ -39,41 +39,39 @@ public class ArrayEx15_정답 {
 		int temp = 0;
 		int tempRan = 0;
 		int cnt  = 0;
-		Boolean isRun = true;
 		
+		int victory = 0;
 		
 		// 셔플 구현(Shuffle) : 배열의 요소들을 무작위로 섞음
 		while (cnt < 1000) {			
-			tempRan = ran.nextInt(9);  
+			tempRan = ran.nextInt(10);  
 			temp = front[0];     
 			front[0] = front[tempRan];  
 			front[tempRan] = temp;   
 			cnt++;
 		}
 		
-		while (isRun) {
-			
+		while (true) {
 			// 승리확인
-			int victory = 0;
-			
 			for (int i = 0 ; i <back.length ; i++) {
-				if (back[i] == 0) {
-					victory++;
-				}
+				if (back[i] == 0) victory++;
 			}
-			if (victory == 0) {
-				System.out.println("승리");
-				break;
-			}
+			if (victory == 0) {System.out.println("승리");break;}
 			else victory = 0;
 			
+			
+			// 데이터 보여주기
 			for (int i=0; i<10; i++) {
 				System.out.print(front[i] + " ");
-			} System.out.println();
+			} 
+			System.out.println();
+			
 			for (int i=0; i<10; i++) {
 				System.out.print(back[i] + " ");
-			} System.out.println();
+			} 
+			System.out.println();
 			
+			// 데이터 입력받기
 			System.out.print("입력 1 : ");
 			int input1 = scan.nextInt();
 			System.out.print("입력 2 : ");
@@ -90,7 +88,6 @@ public class ArrayEx15_정답 {
 				System.out.println("땡");
 				continue;
 			}
-			
 			
 		}
 		

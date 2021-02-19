@@ -34,15 +34,12 @@ public class ArrayEx16_정답 {
 		Random ran = new Random();
 		Scanner scan = new Scanner(System.in);
 		
-		Boolean isRun = true;
-		
 		int[] arr = new int[4];
 		boolean[] isCheck = new boolean[4];
 		
 		// 셔플
 		int cnt = 1;
 		while (cnt <= 4) {
-					
 			int ranNum = ran.nextInt(4);
 			// 빈경우
 			if (!isCheck[ranNum]) {
@@ -50,27 +47,21 @@ public class ArrayEx16_정답 {
 				arr[ranNum] = cnt;
 				cnt++;
 			}
-
 		}
 		
 		int flag = 1;
 		
 		while (flag <= 5) {
-			
-			if (flag == 5) {		
-				System.out.print("성공");
-				break;
-			}
+			if (flag == 5) {System.out.print("성공");break;}
 			System.out.println(Arrays.toString(arr));
 			System.out.print("입력 : ");
 			int input = scan.nextInt();
-			
 			
 			if (arr[input] == flag) {
 				arr[input] = 9;
 				flag++;
 			}
-			else System.out.print("재입력하시오.");
+			else System.out.println("재입력하시오.");
 			
 		}
 		

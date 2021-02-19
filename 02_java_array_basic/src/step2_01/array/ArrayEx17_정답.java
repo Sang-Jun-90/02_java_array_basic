@@ -30,10 +30,9 @@ public class ArrayEx17_정답 {
 		
 		int[] game = new int[9]; /// 0 = [] , 1 = [O] , 2 = [X]
 		
-		Boolean isRun = true;
 		char turn = 'O';
 		
-		while (isRun) {
+		while (true) {
 			
 			System.out.print("=== 틱택토 ===");
 			System.out.println("");
@@ -44,41 +43,9 @@ public class ArrayEx17_정답 {
 				if (i % 3 == 2) System.out.println("");		
 				
 			}
-			// 승리검수.
-			// 가로 .
-			for (int i = 0 ; i < 9 ; i += 3) {
-				if (game[i] * game[i+1]* game[i+2] == 1) {
-					System.out.print("P1 승리 ");
-					isRun = false;
-				}
-				if (game[i] * game[i+1]* game[i+2] == 8) {
-					System.out.print("P2 승리 ");
-					isRun = false;
-				}
-			}
-			// 세로
-			for (int i = 0 ; i < 3 ; i += 1) {
-				if (game[i] * game[i+3]* game[i+6] == 1) {
-					System.out.print("P1 승리 ");
-					isRun = false;
-				}
-				if (game[i] * game[i+3]* game[i+6] == 8) {
-					System.out.print("P2 승리 ");
-					isRun = false;
-				}
-			}
-			// 대각선
-			if (game[0] * game[4]* game[8] == 1) {
-				System.out.print("P1 승리 ");
-				isRun = false;
-			}
-			if (game[2] * game[4]* game[6] == 8) {
-				System.out.print("P2 승리 ");
-				isRun = false;
-			}
 			
 			
-			System.out.print("입력 : ");
+			System.out.print(turn + "턴 입력 : ");
 			int input = scan.nextInt();
 			
 			if (turn == 'O' && game[input] == 0) {
@@ -89,13 +56,22 @@ public class ArrayEx17_정답 {
 				game[input] = 2;
 				turn = 'O';
 			}
-			else if (game[input] != 0) {
-				System.out.println("이미 차있는칸 입니다.");
-				continue;
+			else if (game[input] != 0) System.out.println("이미 차있는칸 입니다.");
+			
+			// 승리검수.
+			// 가로 .
+			for (int i = 0 ; i < 9 ; i += 3) {
+				if (game[i] * game[i+1]* game[i+2] == 1) {System.out.print("P1 승리 ");break;}
+				if (game[i] * game[i+1]* game[i+2] == 8) {System.out.print("P2 승리 ");break;}
 			}
-			
-			
-			
+			// 세로
+			for (int i = 0 ; i < 3 ; i += 1) {
+				if (game[i] * game[i+3]* game[i+6] == 1) {System.out.print("P1 승리 ");break;}
+				if (game[i] * game[i+3]* game[i+6] == 8) {System.out.print("P2 승리 ");break;}
+			}
+			// 대각선
+			if (game[0] * game[4]* game[8] == 1) {System.out.print("P1 승리 ");break;}
+			if (game[2] * game[4]* game[6] == 8) {System.out.print("P2 승리 ");break;}
 		}
 		
 		
