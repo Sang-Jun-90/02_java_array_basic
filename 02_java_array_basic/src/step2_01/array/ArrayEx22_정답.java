@@ -21,10 +21,9 @@ public class ArrayEx22_정답 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		int[] arr = {10,20,0,0,0};
-		int elementCnt = 2;
+		int[] arr = {10,20,30,0,0};
+		int elementCnt = 3;
 		int selectMenu = 0;
-		int delIdx = 0;  // 삭제할 데이터의 위치값   // 1
 		
 		while (true) {
 			System.out.println("================");
@@ -50,29 +49,48 @@ public class ArrayEx22_정답 {
 			
 			// 2 삭제
 			else if (selectMenu == 2) {
+				int delIdx = -1;  
 				System.out.print("삭제할 데이터 : ");
-				int delData = scan.nextInt();
-				for (int i = 0; i < elementCnt-1; i++) {   
-					if(arr[i] == delData) delIdx = i;
+				int delData = scan.nextInt();  
+				for (int i = 0; i < elementCnt; i++) {    
+					if(arr[i] == delData) delIdx = i;  
 				}
 				// 데이터가 없는 경우
-				if (delIdx == 0) System.out.println("요청하신 데이터는 없습니다.");
+				if (delIdx == -1) System.out.println("요청하신 데이터는 없습니다.");
+				// 데이터가 있는 경우 
 				else {
-					arr[delIdx] = 0;
+					for (int i = delIdx ; i < elementCnt - 1 ; i++ ) {
+						arr[i] = arr[i+1];
+					}
 					elementCnt--;
 				}
-				delIdx = 0;
 			}
 			
 			// 3 삽입
 			else if (selectMenu == 3) {
 				
+				if (elementCnt == 5) {System.out.println("더이상 데이터를 추가 할 수 없습니다.");break;}
+				
+				System.out.print("삽입위치 : ");
+				int inputIndex = scan.nextInt();  
+				
+				if (inputIndex > elementCnt || inputIndex < 0) continue;
+				
+				System.out.print("삽입할 데이터 : ");
+				int inputData = scan.nextInt();  
+				
+				for (int i = elementCnt ; i > inputIndex ; i--) {
+					arr[i] = arr[i-1];
+				}
+				arr[inputIndex] = inputData;
+				elementCnt++;
+				
+				
 			}
 			
 			// 4 종료
-			else if (selectMenu == 4) {
-				
-			}
+			else if (selectMenu == 4) break;
+		
 			
 			// 숫자 잘못 입력
 			else System.out.println("다시 입력하세요.");
