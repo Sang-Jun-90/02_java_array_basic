@@ -21,19 +21,9 @@ public class ArrayEx10_문제 {
 		int[] lotto1 = {0, 0, 7, 7, 7, 0, 0, 0};
 		int[] lotto2 = {7, 0, 7, 7, 0, 0, 0, 0};
 		int[] lotto3 = {7, 0, 7, 7, 7, 0, 7, 0};
+		int[] tmep = new int[8];
 		int sel      = 0;
 		
-		while (true) {
-					
-			System.out.println("\n[1]번복권 결과확인");
-			System.out.println("[2]번복권 결과확인");
-			System.out.println("[3]번복권 결과확인");
-			System.out.println("[0]종료");
-			System.out.print("메뉴 선택 : ");
-			sel = scan.nextInt();
-								
-			
-		}
 		
 	}
 }
