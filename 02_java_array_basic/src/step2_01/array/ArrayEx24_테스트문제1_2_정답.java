@@ -61,29 +61,46 @@ public class ArrayEx24_테스트문제1_2_정답 {
 //		System.out.println(Arrays.toString(g));
 		
 		// 문제 10) 숫자를 하나 입력받고 아래 배열을 앞으로 하나씩 밀어낸후 맨뒤에 저장
-		int[] h = { 10,20,30,40,50 };
-		// 예)  60 ==> {20,30,40,50,60};
-		
-		System.out.print("입력 : ");
-		int input3 = scan.nextInt();
-		
-		for (int i = 0; i < h.length-1; i++) {
-			h[i] = h[i+1];
-		}
-		h[4] = input3;
-		
-		System.out.println(Arrays.toString(h));
+//		int[] h = { 10,20,30,40,50 };
+//		// 예)  60 ==> {20,30,40,50,60};
+//		
+//		System.out.print("입력 : ");
+//		int input3 = scan.nextInt();
+//		
+//		for (int i = 0; i < h.length-1; i++) {
+//			h[i] = h[i+1];
+//		}
+//		h[4] = input3;
+//		
+//		System.out.println(Arrays.toString(h));
 		
 		// 문제 11) 숫자를 하나 입력받고 아래 배열을 뒤로 하나씩 밀어낸후 맨 앞에 저장 
-		int[] i = { 10,20,30,40,50 };
-		// 예) 60 ==> {60,10,20,30,40};
+//		int[] i = { 10,20,30,40,50 };
+//		// 예) 60 ==> {60,10,20,30,40};
+//		
+//		
+//		System.out.print("입력 : ");
+//		int input4 = scan.nextInt();
+//		
+//		for (int j = i.length-1; j > 0; j--) {
+//			i[j] = i[j-1];
+//		}
+//		i[0] = input4;
+//		
+//		System.out.println(Arrays.toString(i));	
+		
 		
 		// 문제 12) 아래배열을 거꾸로 저장 
 		int[] j = { 1,2,3,4,5 };
 		int[] k = { 0,0,0,0,0 };
 		//예) k => {5,4,3,2,1};
-
 		
+		for (int i = 0 ; i < j.length ; i++) {
+			k[i] = j[4-i];
+		}
+		
+		
+		System.out.println(Arrays.toString(k));			
 		
 		
 	}
