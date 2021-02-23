@@ -131,9 +131,9 @@ public class ArrayEx24_테스트문제1_3_정답 {
 		for (int i = 0 ; i < arr.length ; i++) {
 			int minus = -1;
 			System.out.print("입력 : ");
-			int input = scan.nextInt();
+			int input3 = scan.nextInt();
 			for (int j = 0 ; j <arr.length ; j++) {
-				if (input == arr[j]) {
+				if (input3 == arr[j]) {
 					minus = j;
 				}
 			}
