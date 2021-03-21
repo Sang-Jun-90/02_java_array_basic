@@ -17,24 +17,23 @@ public class ArrayEx24_테스트문제1_2_정답 {
 		
 		
 		// 앞 뒤를 자르지 않고 넣는 방법 고민해보기
-//		System.out.print("입력 : ");
-//		int input1 = scan.nextInt();
-//		
-//		for (int i = 0; i < e.length; i++) {  
-//			if (d[i] == input1) {
-//				d[i] = 0 ;
-//				// 앞
-//				for (int j = 0; j < i; j++) {  
-//					e[j] = d[j];
-//				}
-//				// 뒤
-//				for (int k = 4; k > i  ; k--) {  
-//					e[k-1] = d[k];
-//				}
-//				
-//			}
-//		}
-//		System.out.println(Arrays.toString(e));
+		System.out.print("입력 : ");
+		int input1 = scan.nextInt();
+		
+		for (int i = 0; i < e.length; i++) {  
+			if (d[i] == input1) {
+				// 앞
+				for (int j = 0; j < i; j++) {  
+					e[j] = d[j];
+				}
+				// 뒤
+				for (int k = i; k < e.length-1  ; k++) {  
+					e[k] = d[k+1];
+				}
+				
+			}
+		}
+		System.out.println(Arrays.toString(e));
 		
 
 		// 문제 9) 아래 f에서 scanner로 내가 입력한 번호와 값을 빼고 g에 저장 
@@ -42,52 +41,52 @@ public class ArrayEx24_테스트문제1_2_정답 {
 		int[] g = { 0,0,0,0,0,0 };
 		// 예) 1002 ==> {1001, 40, 1003, 70 , 0, 0};
 		
-//		System.out.print("입력 : ");
-//		int input2 = scan.nextInt();
-//		
-//		for (int i = 0; i < f.length; i++) { // i = 2 
-//			if (f[i] == input2) {
-//				
-//				// 앞
-//				for (int j = 0; j < i; j++) { // j = 0 , 1
-//					g[j] = f[j];
-//				}
-//				// 뒤
-//				for (int k = f.length-3; k >= i; k--) {   // k = 3 , 2
-//					g[k] = f[k+2];
-//				}
-//			}
-//		}
-//		System.out.println(Arrays.toString(g));
+		System.out.print("입력 : ");
+		int input2 = scan.nextInt();
+		
+		for (int i = 0; i < f.length; i++) { 
+			if (f[i] == input2) {
+				
+				// 앞
+				for (int j = 0; j < i; j++) { 
+					g[j] = f[j];
+				}
+				// 뒤
+				for (int k = i; k < f.length-2; k++) {   
+					g[k] = f[k+2];
+				}
+			}
+		}
+		System.out.println(Arrays.toString(g));
 		
 		// 문제 10) 숫자를 하나 입력받고 아래 배열을 앞으로 하나씩 밀어낸후 맨뒤에 저장
-//		int[] h = { 10,20,30,40,50 };
-//		// 예)  60 ==> {20,30,40,50,60};
-//		
-//		System.out.print("입력 : ");
-//		int input3 = scan.nextInt();
-//		
-//		for (int i = 0; i < h.length-1; i++) {
-//			h[i] = h[i+1];
-//		}
-//		h[4] = input3;
-//		
-//		System.out.println(Arrays.toString(h));
+		int[] h = { 10,20,30,40,50 };
+		// 예)  60 ==> {20,30,40,50,60};
+		
+		System.out.print("입력 : ");
+		int input3 = scan.nextInt();
+		
+		for (int i = 0; i < h.length-1; i++) {
+			h[i] = h[i+1];
+		}
+		h[4] = input3;
+		
+		System.out.println(Arrays.toString(h));
 		
 		// 문제 11) 숫자를 하나 입력받고 아래 배열을 뒤로 하나씩 밀어낸후 맨 앞에 저장 
-//		int[] i = { 10,20,30,40,50 };
-//		// 예) 60 ==> {60,10,20,30,40};
-//		
-//		
-//		System.out.print("입력 : ");
-//		int input4 = scan.nextInt();
-//		
-//		for (int j = i.length-1; j > 0; j--) {
-//			i[j] = i[j-1];
-//		}
-//		i[0] = input4;
-//		
-//		System.out.println(Arrays.toString(i));	
+		int[] i = { 10,20,30,40,50 };
+		// 예) 60 ==> {60,10,20,30,40};
+		
+		
+		System.out.print("입력 : ");
+		int input4 = scan.nextInt();
+		
+		for (int j = i.length-1; j > 0; j--) {
+			i[j] = i[j-1];
+		}
+		i[0] = input4;
+		
+		System.out.println(Arrays.toString(i));	
 		
 		
 		// 문제 12) 아래배열을 거꾸로 저장 
@@ -95,8 +94,8 @@ public class ArrayEx24_테스트문제1_2_정답 {
 		int[] k = { 0,0,0,0,0 };
 		//예) k => {5,4,3,2,1};
 		
-		for (int i = 0 ; i < j.length ; i++) {
-			k[i] = j[4-i];
+		for (int l = 0 ; l < j.length ; l++) {
+			k[l] = j[4-l];
 		}
 		
 		

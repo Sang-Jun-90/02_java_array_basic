@@ -75,7 +75,7 @@ public class ArrayEx24_테스트문제1_3_정답 {
 					p[j] = o[j];
 				}
 				// 뒤 
-				for (int k = o.length-2 ; k >= i ; k--) {
+				for (int k = i ; k < 4 ; k++) {
 					p[k] = o[k+1];
 				}
 				
@@ -101,7 +101,7 @@ public class ArrayEx24_테스트문제1_3_정답 {
 					r[j] = q[j]; 
 				}
 				// 뒤 
-				for (int k = o.length-2 ; k >= i ; k--) {
+				for (int k = o.length-2 ; k < 4 ; k++) {
 					r[k] = q[k+1];
 				}
 				
@@ -129,15 +129,15 @@ public class ArrayEx24_테스트문제1_3_정답 {
 		int cnt4 = 0;
 		
 		for (int i = 0 ; i < arr.length ; i++) {
-			int minus = -1;
+			int check = -1;
 			System.out.print("입력 : ");
 			int input3 = scan.nextInt();
 			for (int j = 0 ; j <arr.length ; j++) {
 				if (input3 == arr[j]) {
-					minus = j;
+					check = j;
 				}
 			}
-			s[i] = minus;
+			s[i] = check;
 		}
 		System.out.println(Arrays.toString(s));
 		System.out.println();
